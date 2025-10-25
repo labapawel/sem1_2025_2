@@ -6,6 +6,17 @@ return [
         'password'=>'Passwort',
         'emailVer'=>"E-Mail-Bestätigung",
         'createAt'=>'Erstellt am',
-        'updateAt'=>"Aktualisiert am"
-        ]
+        'updateAt'=>"Aktualisiert am",
+        'title'=>"Titel",
+        'slug'=>"Slug",
+        'content'=>"Inhalt",
+        'language'=>"Sprache",
+        'published'=>"Veröffentlicht",
+        'active'=>"Aktiv",
+    ],
+    'nav'=>[
+        'users'=>'Benutzer',
+        'settinggroups'=>'Verwaltung',
+        'pages'=>'Seiten',
+    ],
     ];

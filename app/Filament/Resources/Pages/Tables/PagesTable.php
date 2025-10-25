@@ -1,29 +1,37 @@
 <?php
 
-namespace App\Filament\Resources\Users\Tables;
+namespace App\Filament\Resources\Pages\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\BooleanColumn;
 
-class UsersTable
+class PagesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label(__('admin.title.name'))
+                 TextColumn::make('tytul')
+                    ->label(__('admin.title.title'))
+                    ->searchable(),    
+                TextColumn::make('url')
+                    ->label('URL')
                     ->searchable(),
-                TextColumn::make('email')
-                    ->label(__('admin.title.email'))
+                TextColumn::make('jezyk')
+                    ->label('Język')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->label(__('admin.title.emailVer'))
-                    ->dateTime()
-                    ->sortable(),
+                BooleanColumn::make('opublikowana')
+                    ->label('Opublikowana'),
+                BooleanColumn::make('aktywny')
+                    ->label('Aktywny'),
+                TextColumn::make('uzytkownik')
+                    ->label('Użytkownik')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
                     ->label(__('admin.title.createAt'))
                     ->dateTime()
@@ -40,7 +48,6 @@ class UsersTable
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteBulkAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
