@@ -13,6 +13,9 @@ return [
         'language'=>"Language",
         'published'=>"Published",
         'active'=>"Active",
+        'username'=>"Username",
+        'images'=>"Images",
+        'created_at'=>"Created At",
         
     ],
     'nav'=>[

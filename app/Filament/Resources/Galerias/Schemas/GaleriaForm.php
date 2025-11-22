@@ -12,13 +12,20 @@ class GaleriaForm
     {
         return $schema
             ->components([
-                TextInput::make('title'),
+                TextInput::make('title')
+                    ->label(__("admin.title.name"))
+                    ->columnSpan('full'),
                 FileUpload::make('images')
+                    ->label(__("admin.title.images"))
                     ->multiple()
-                    ->directory('Galeria')
+                    ->directory('galeria')
+                    ->disk('public')
+                    ->panelLayout('grid')
+                    ->columns(4)
                     ->image()
                     ->maxFiles(20)
                     ->reorderable()
+                    ->columnSpanFull()
                     ->imageEditor()
                     ->maxSize(5120)
                     ->visibility('public')

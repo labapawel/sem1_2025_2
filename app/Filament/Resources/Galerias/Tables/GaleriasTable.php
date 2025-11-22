@@ -15,6 +15,11 @@ class GaleriasTable
         return $table
             ->columns([
                 TextColumn::make("title")
+                    ->label(__("admin.title.name")),
+                TextColumn::make("user.name")
+                    ->label(__("admin.title.username")),
+                TextColumn::make("created_at")->dateTime()
+                    ->label(__("admin.title.created_at")),
             ])
             ->filters([
                 //

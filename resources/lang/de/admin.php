@@ -13,6 +13,9 @@ return [
         'language'=>"Sprache",
         'published'=>"Veröffentlicht",
         'active'=>"Aktiv",
+        'username'=>"Benutzername",
+        'images'=>"Bilder",
+        'created_at'=>"Erstellt am",
     ],
     'nav'=>[
         'users'=>'Benutzer',

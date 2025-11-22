@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Page::class);
     }
+
+    public function galerias()
+    {
+        return $this->hasMany(Galeria::class);
+    }
 }

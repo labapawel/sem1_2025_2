@@ -10,6 +10,12 @@ return [
         'title'=>"Cím",
         'slug'=>"Slug",
         'content'=>"Tartalom",
+        'language'=>"Nyelv",
+        'published'=>"Közzétéve",
+        'active'=>"Aktív",
+        'username'=>"Felhasználónév",
+        'images'=>"Képek",
+        'created_at'=>"Létrehozva",
     ],
     'nav'=>[
         'users'=>'Felhasználók',
