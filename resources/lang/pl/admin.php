@@ -17,6 +17,9 @@ return [
         'username'=>"Nazwa użytkownika",
         'images'=>"Obrazy", 
         'created_at'=>"Data utworzenia",
+        'translate'=>"Tłumaczenie",
+        'page'=>"Strona powiązana",
+        'user'=>"Użytkownik",
 
     ],
     'nav'=>[

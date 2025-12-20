@@ -7,11 +7,18 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\CheckboxList;
 
 class PageForm
 {
     public static function configure(Schema $schema): Schema
     {
+        $lang = [
+                        'pl' => 'Polski',
+                        'en' => 'English',
+                        'de' => 'Deutsch',
+                        'hu' => 'Magyar',
+                    ];
         return $schema
             ->components([
                 TextInput::make('tytul')
@@ -27,12 +34,11 @@ class PageForm
                 Select::make('jezyk')
                     ->label(__('admin.title.language'))
                     ->required()
-                    ->options([
-                        'pl' => 'Polski',
-                        'en' => 'English',
-                        'de' => 'Deutsch',
-                        'hu' => 'Magyar',
-                    ]),
+                    ->options($lang),
+                Select::make('strona_id')
+                    ->label(__('admin.title.page'))
+                    // ->required()
+                    ->options(\App\Models\Page::where('jezyk', env('APP_LOCALE','pl'))->get()->pluck('tytul', 'id')),
                 TextInput::make('uzytkownik')
                     ->label(__('admin.title.user'))
                     ->readonly(),
@@ -41,6 +47,11 @@ class PageForm
                     ->columnSpan('full')
                     ->extraAttributes(['style' => 'min-height: 80vh;'])
                     ->required(),   
+                CheckboxList::make('tlumacz')
+                    ->label(__('admin.title.translate'))
+                    ->options($lang)
+                    ->required(),
+       
             ]);
     }
 }
